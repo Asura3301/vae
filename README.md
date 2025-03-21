@@ -1,1 +1,1 @@
-#Stable Diffusion Variational Autoencoder
+# Stable Diffusion Variational Autoencoder
