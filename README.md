@@ -67,9 +67,8 @@ Currently, hyperparameters and data paths are set directly within `tools/train.p
     ```bash
     python tools/train.py
     ```
-    Checkpoints will be saved in the `./checkpoints` directory (or as configured) and sample reconstructions in `./samples`.
+    Checkpoints will be saved in the `./checkpoints` directory (or as configured) 
 
-*(Adding command-line arguments for configuration is a potential future improvement.)*
 
 ## Model Architecture
 
