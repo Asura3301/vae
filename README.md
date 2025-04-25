@@ -74,14 +74,14 @@ Currently, hyperparameters and data paths are set directly within `tools/train.p
 
 The VAE implementation (`model/vae.py` or similar) consists of:
 
-1.  **Encoder:** Maps input images to the parameters (mean \( \mu \) and log-variance \( \log \sigma^2 \)) of a distribution in the latent space. Typically implemented using convolutional layers.
+1.  **Encoder:** Maps input images to the parameters (mean $ \mu $ and log-variance $ \log \sigma^2 $) of a distribution in the latent space. Typically implemented using convolutional layers.
 2.  **Latent Space:** A lower-dimensional space where the input data is represented probabilistically.
-3.  **Reparameterization Trick:** Used to sample from the latent distribution \( \mathcal{N}(\mu, \sigma^2) \) in a way that allows backpropagation. \( z = \mu + \sigma \odot \epsilon \), where \( \epsilon \sim \mathcal{N}(0, I) \).
+3.  **Reparameterization Trick:** Used to sample from the latent distribution $ \mathcal{N}(\mu, \sigma^2) $ in a way that allows backpropagation. $ z = \mu + \sigma \odot \epsilon $, where $ \epsilon \sim \mathcal{N}(0, I) $.
 4.  **Decoder:** Maps points sampled from the latent space back to the original image space. Typically implemented using transposed convolutional layers ( deconvolutions).
 
 The model is trained by minimizing a loss function composed of:
 *   **Reconstruction Loss:** Measures how well the decoder reconstructs the input image (e.g., Mean Squared Error or Binary Cross-Entropy).
-*   **KL Divergence Loss:** A regularization term that encourages the learned latent distribution to be close to a standard normal distribution \( \mathcal{N}(0, I) \). \( D_{KL}(q(z|x) || p(z)) \)
+*   **KL Divergence Loss:** A regularization term that encourages the learned latent distribution to be close to a standard normal distribution $ \mathcal{N}(0, I) $. $ D_{KL}(q(z|x) || p(z)) $
 
 *(Specific layer configurations and hyperparameters can be found in the model definition file.)*
 
