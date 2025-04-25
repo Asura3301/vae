@@ -1,0 +1,7 @@
+torch
+torchvision
+scikit-learn
+sk-learn
+diffusers
+huggingface_hub
+matplotlib
